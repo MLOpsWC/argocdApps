@@ -1,0 +1,30 @@
+global:
+  project: default
+
+dockerRegistry:
+  registry: https://hub.docker.com/
+  username: dockerman123123
+  password: PYpiter123
+
+
+projects:
+  infrastructure:
+    destinationNamespaces:
+      - reloader
+
+additionalNamespaces:
+  - reloader
+
+apps:
+  reloader:
+    enabled: true
+    namespace: reloader
+    repo:
+      url: git@git.app.uib.no:caleno/helm-charts.git
+      targetRevision: 0.0.1
+    syncPolicy:
+      automated:
+        selfHeal: true
+        prune: true
+    helm:
+      loadValuesFromFile: values/reloader.yaml
