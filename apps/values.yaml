@@ -28,3 +28,60 @@
 #         prune: true
 #     helm:
 #       loadValuesFromFile: values/reloader.yaml
+
+# Default values for helm.
+# This is a YAML-formatted file.
+# Declare variables to be passed into your templates.
+
+replicaCount: 1
+
+image:
+  repository: https://hub.docker.com/repository/docker/dockerman123123/flask_app_docker
+  pullPolicy: IfNotPresent
+  tag: 'latest'
+
+# imagePullSecrets:
+#   - name: docker-registry
+nameOverride: ''
+fullnameOverride: ''
+
+podAnnotations: {}
+
+service:
+  type: ClusterIP
+  port: 80
+
+resources:
+  limits:
+    cpu: 100m
+    memory: 128Mi
+  requests:
+    cpu: 100m
+    memory: 128Mi
+
+dockerRegistry:
+  url: 'https://hub.docker.com/'
+  urlRo: 'https://hub.docker.com/'
+  username: dockerman123123
+  password: PYpiter123
+
+# secretmount:
+#   name: rcv-dev-dummysre-secret
+
+# extra_env:
+#   - name: dummy_mounted_file
+#     value: '/secretmount/username'
+
+# mongo_env:
+#   connection:
+#     - name: dummy_mongo_hosts
+#       value: 'localhost'
+#     - name: dummy_mongo_db
+#       value: 'dummysre'
+
+nodeSelector: {}
+
+tolerations: []
+
+affinity: {}
+
