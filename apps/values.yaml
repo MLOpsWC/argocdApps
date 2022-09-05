@@ -20,8 +20,8 @@ apps:
     enabled: true
     namespace: reloader
     repo:
-      url: git@git.app.uib.no:caleno/helm-charts.git
-      targetRevision: 0.0.1
+      url: https://github.com/DevOpsWC/kubernetes-reloader.git
+      targetRevision: master
     syncPolicy:
       automated:
         selfHeal: true
