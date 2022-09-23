@@ -1,9 +1,0 @@
-hub: stakter/reloader
-tag: 0.0.118
-
-# imagePullSecrets:
-  # - docker-registry
-
-# podLabels:
-#   rc.component: rcv-reloader
-#   rc.logging.log_type: plain
